@@ -1,0 +1,139 @@
+import pygame  
+pygame.init()  
+win = pygame.display.set_mode((500,500))  
+pygame.display.set_caption("No game no life")  
+x = 100  
+y = 240 
+width = 10 
+height = 10 
+speed = 10  
+ 
+isJump = False 
+jumpCount = 10 
+ 
+game_runs = True  
+while game_runs:  
+    pygame.time.delay(25)  
+    for event in pygame.event.get():  
+        if event.type == pygame.QUIT:  
+          game_runs = False  
+  
+    keys = pygame.key.get_pressed()  
+    if keys[pygame.K_LEFT] and x > 5:  
+        x -=speed  
+    if keys[pygame.K_RIGHT] and x < 500 - width - 5:  
+        x +=speed  
+    if not(isJump): 
+        if keys[pygame.K_UP] and y > 5:  
+            y -=speed  
+        if keys[pygame.K_DOWN] and y < 240:  
+            y +=speed  
+        if keys[pygame.K_SPACE]: 
+            isJump = True 
+    else: 
+        if jumpCount >= -10: 
+            if jumpCount < 0:  
+                y += (jumpCount ** 2) / 2 
+            else: 
+                y -= (jumpCount ** 2) / 2 
+            jumpCount -=1 
+        else: 
+            isJump = False 
+            jumpCount = 10 
+    win.fill((0,0,0,))      
+    pygame.draw.rect(win, (200,255,0), (x,y,width,height))  
+    pygame.display.update()  
+pygame.quit()
+
+import pygame  
+pygame.init()  
+win = pygame.display.set_mode((600,600))  
+pygame.display.set_caption("No game no life")  
+x = 200  
+y = 340 
+width = 20 
+height = 20 
+speed = 20  
+ 
+isJump = False 
+ 
+game_runs = True  
+while game_runs:  
+    pygame.time.delay(25)  
+    for event in pygame.event.get():  
+        if event.type == pygame.QUIT:  
+          game_runs = False  
+  
+    keys = pygame.key.get_pressed()  
+    if keys[pygame.K_LEFT] and x > 5:  
+        x -=speed  
+    if keys[pygame.K_RIGHT] and x < 500 - width - 5:  
+        x +=speed  
+    if not(isJump): 
+        if keys[pygame.K_UP] and y > 5:  
+            y -=speed  
+        if keys[pygame.K_DOWN] and y < 240:  
+            y +=speed  
+        if keys[pygame.K_SPACE]: 
+            isJump = True 
+    else: 
+        if jumpCount >= -10: 
+            if jumpCount < 0: 
+                y += (jumpCount ** 2) / 2 
+            else: 
+                y -= (jumpCount ** 2) / 2 
+            jumpCount -=1 
+        else: 
+            isJump = False 
+            jumpCount = 10 
+    win.fill((0,0,0))      
+    pygame.draw.rect(win, (200,255,0), (x,y,width,height))  
+    pygame.display.update()  
+pygame.quit()
+
+import pygame  
+pygame.init()  
+win = pygame.display.set_mode((500,500))  
+pygame.display.set_caption("No game no life")  
+x = 100  
+y = 240 
+width = 10 
+height = 10 
+speed = 10  
+ 
+isJump = False 
+jumpCount = 10 
+ 
+game_runs = True  
+while game_runs:  
+    pygame.time.delay(25)  
+    for event in pygame.event.get():  
+        if event.type == pygame.QUIT:  
+          game_runs = False  
+  
+    keys = pygame.key.get_pressed()  
+    if keys[pygame.K_LEFT] and x > 5:  
+        x -=speed  
+    if keys[pygame.K_RIGHT] and x < 500 - width - 5:  
+        x +=speed  
+    if not(isJump): 
+        if keys[pygame.K_UP] and y > 5:  
+            y -=speed  
+        if keys[pygame.K_DOWN] and y < 240:  
+            y +=speed  
+        if keys[pygame.K_SPACE]: 
+            isJump = True 
+    else: 
+        if jumpCount >= -10: 
+            if jumpCount < 0: 
+                y += (jumpCount ** 2) / 2 
+            else: 
+                y -= (jumpCount ** 2) / 2 
+            jumpCount -=1 
+        else: 
+            isJump = False 
+            jumpCount = 10 
+    win.fill((0,0,0))      
+    pygame.draw.rect(win, (200,255,0), (x,y,width,height))  
+    pygame.display.update()  
+pygame.quit()
